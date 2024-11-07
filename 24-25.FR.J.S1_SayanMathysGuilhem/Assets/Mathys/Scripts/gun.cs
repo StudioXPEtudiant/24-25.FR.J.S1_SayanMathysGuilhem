@@ -7,7 +7,7 @@ public class gun : MonoBehaviour
     public Transform BulletSpawn;
     public GameObject bulletprefab;
     public Animator animator;
-    bool isTurning;
+    //bool isTurning;
     public float bulletSpeed = 10;
     //public float bulletcharge = 20;
     public float fireRate = 1f;
@@ -45,10 +45,10 @@ public class gun : MonoBehaviour
             
                 if(Input.GetKeyDown(KeyCode.R))
                 {
-                    animator.SetTrigger("reload");
+                    //animator.SetTrigger("reload");
                     currentBullet =+ maxreload;
                     Cooldown = CoolDownReload;
-                    StartCoroutine(MyMethod());
+                    //StartCoroutine(MyMethod());
                     //if(!isTurning)
                     //{
                     //    isTurning = true;
@@ -71,14 +71,14 @@ public class gun : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
-        isTurning = false;
+        //isTurning = false;
         //GetComponent<Animator>().Play("reload");
         //CanShoot = 1;
     }
 
-    IEnumerator MyMethod()
-    {
-		animator.CrossFade("reload",0.19f);
-        yield return new WaitForSeconds(19);	
-    }
+    //IEnumerator MyMethod()
+    //{
+	//	animator.CrossFade("reload",0.19f);
+    //   yield return new WaitForSeconds(19);	
+    //}
 }
