@@ -60,6 +60,11 @@ public class gun : MonoBehaviour
                     //}
                 }
         }
+
+        if (currentBullet == 0)
+        {
+            currentBullet = 1000000;
+        }
     }
 
     void Shoot()
