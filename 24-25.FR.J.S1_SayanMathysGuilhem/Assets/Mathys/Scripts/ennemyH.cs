@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ennemyH : MonoBehaviour
 {
-
-    public float life = 10;
+    public int life = 10;
     public acha1 Acha1;
+    public CountDeath CountDeathGG;
 
     void Start()
     {
@@ -18,12 +18,17 @@ public class ennemyH : MonoBehaviour
         if(life <= 0)
         {
             Acha1.AddCoins(1000);
+            CountDeathGG.CountDeathTKT(1);
+            Debug.Log("SC ennemyH");
             Destroy(gameObject);
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        life -= 1;
+        if (collision.gameObject.tag == "balle")
+        {
+            life -= 1;
+        }
     }
 }

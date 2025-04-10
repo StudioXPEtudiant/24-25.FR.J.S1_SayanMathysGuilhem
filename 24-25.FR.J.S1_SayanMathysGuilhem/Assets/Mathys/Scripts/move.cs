@@ -30,23 +30,23 @@ public class move : MonoBehaviour
         if (Input.GetKey(imputFront))
         {
             transform.Translate(0, 0, walkSpeed * Time.deltaTime);
-            animations.Play("walk");
+            //animations.Play("walk");
         }
         
         if (Input.GetKey(imputBack))
         {
             transform.Translate(0, 0, -(walkSpeed / 2) * Time.deltaTime);
-           animations.Play("walk");
+           //animations.Play("walk");
         }
             
-        if (Input.GetKey(imputLeft))
-        {
-            transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
-        }    
+        //if (Input.GetKey(imputLeft))
+        //{
+        //    transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
+        //}    
 
-        if (Input.GetKey(imputRight))
-        {
-            transform.Rotate(0, turnSpeed * Time.deltaTime, 0); 
-        }
+        //if (Input.GetKey(imputRight))
+        //{
+        //    transform.Rotate(0, turnSpeed * Time.deltaTime, 0); 
+        //}
     }
 }

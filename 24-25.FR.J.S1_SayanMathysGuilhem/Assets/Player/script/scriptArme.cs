@@ -13,7 +13,7 @@ public class scriptArme : MonoBehaviour
     public float currentBullet = 10;
     public float ReoladBullet = 3f;
     public float maxreload = 10;
-    private float minbullet = 0;
+    //private float minbullet = 0;
     public float nbBullet = 1;
     private float Cooldown = 0f;
     public float CoolDownReload = 2f;

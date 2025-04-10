@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Mathys/Time-Island.unity
+    guid: 4940e6416a52b4403add7ce2614b7267
+  - enabled: 1
+    path: Assets/Mathys/tabledecraft.unity
+    guid: aeb0db07e9b902042bf10a4bfc45db23
   m_configObjects: {}

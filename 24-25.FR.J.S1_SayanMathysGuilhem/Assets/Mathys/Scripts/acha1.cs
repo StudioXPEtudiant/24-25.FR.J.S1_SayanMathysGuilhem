@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//desactiver le bouton chop et le viser dans la table de craft 
 public class acha1 : MonoBehaviour
 {
     [SerializeField] GameObject shopitem;
@@ -22,15 +22,22 @@ public class acha1 : MonoBehaviour
     [SerializeField] GameObject a3;
     [SerializeField] GameObject a4;
     [SerializeField] GameObject a5;
+    [SerializeField] Text123 Text1;
     public int price;
     public int price1;
     public int price2;
     public int price3;
     public int price4;
     public int CurrentCoins;
+    public int CurrentWood;
     public int coinsCount;
     public int addcoins;
-    public Text coinsCountText;
+    public int addwood;
+    public int shoptest;
+    //public Text1 coinsCountText;
+    //public Text1 woodCountText;
+    public static acha1 instance = null;
+    //public Text123 text;
 
     public void Acha()
     {
@@ -42,7 +49,7 @@ public class acha1 : MonoBehaviour
             j3.SetActive(false);
             a1.SetActive(true);
             CurrentCoins -= price;
-            coinsCountText.text = CurrentCoins.ToString();    
+            Text1.coinsCountText.text = CurrentCoins.ToString();    
         }
         else
         {
@@ -61,7 +68,7 @@ public class acha1 : MonoBehaviour
             j3.SetActive(true);
             a2.SetActive(true);
             CurrentCoins -= price1;
-            coinsCountText.text = CurrentCoins.ToString();    
+            Text1.coinsCountText.text = CurrentCoins.ToString();    
         }
         else
         {
@@ -80,7 +87,7 @@ public class acha1 : MonoBehaviour
             gun3.SetActive(false);
             a3.SetActive(true);
             CurrentCoins -= price2;
-            coinsCountText.text = CurrentCoins.ToString();    
+            Text1.coinsCountText.text = CurrentCoins.ToString();    
         }
         else
         {
@@ -99,7 +106,7 @@ public class acha1 : MonoBehaviour
             gun3.SetActive(false);
             a4.SetActive(true);
             CurrentCoins -= price2;
-            coinsCountText.text = CurrentCoins.ToString();    
+            Text1.coinsCountText.text = CurrentCoins.ToString();    
         }
         else
         {
@@ -118,7 +125,7 @@ public class acha1 : MonoBehaviour
             gun3.SetActive(true);
             a5.SetActive(true);
             CurrentCoins -= price4;
-            coinsCountText.text = CurrentCoins.ToString();    
+            Text1.coinsCountText.text = CurrentCoins.ToString();    
         }
         else
         {
@@ -130,11 +137,22 @@ public class acha1 : MonoBehaviour
     void Update()
     {
         //nn.SetActive(false);
+        Text1.woodCountText.text = CurrentWood.ToString();
         return;
     }
 
     void Start()
     {
+        if(instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        } 
         shopitem.SetActive(true);
         gun1.SetActive(false);
         j1.SetActive(true);
@@ -189,6 +207,13 @@ public class acha1 : MonoBehaviour
     {
         CurrentCoins += count;
         addcoins += count;
-        coinsCountText.text = CurrentCoins.ToString();
+        Text1.coinsCountText.text = CurrentCoins.ToString();
+    }
+
+    public void AddWood(int count)
+    {
+        CurrentWood += count;
+        addwood += count;
+        Text1.woodCountText.text = CurrentWood.ToString();
     }
 }

@@ -6,7 +6,7 @@ public class ShopMoi : MonoBehaviour
 {
     [SerializeField] GameObject ShopUI;
     [SerializeField] GameObject ButtonUI;
-
+    
     void Start()
     {
         ShopUI.SetActive (false);

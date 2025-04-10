@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
 {
-   private void OnTriggerEnter2D(Collider2D collision)
-   {
-    if (collision.CompareTag("Player"))
-     {
-      moi.instance.AddCoins(1);
-      Destroy(gameObject);
-     }
+   public acha1 Acha1;
 
-    if (Input.GetKeyDown(KeyCode.J))
-      {
-      moi.instance.AddCoins(1);
+   private void OnTriggerEnter(Collider collision)
+   {
+      if (collision.CompareTag("Player"))
+      {      
+         moi.instance.AddCoins(1);
+         Destroy(gameObject);
+      }
+      if (collision.CompareTag("Player"))
+      {         
+         Debug.LogWarning("sa marche");
+         Acha1.AddWood(1); // Correct class name
+         Destroy(gameObject);
       }
    }
 }

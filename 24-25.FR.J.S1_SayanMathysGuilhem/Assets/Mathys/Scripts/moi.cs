@@ -31,7 +31,7 @@ public class moi : MonoBehaviour
 
     public void AchaS()
     {
-        if (CurrentCoins >= price && coinsCount >= price);
+        if (CurrentCoins >= price && coinsCount >= price)
         {
             shopitem.SetActive (false);
             Achaa.SetActive (false);

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class visor : MonoBehaviour
 {
-    [SerializeField] private KeyCode visorKey = KeyCode.Mouse1;
+    //[SerializeField] private KeyCode visorKey = KeyCode.Mouse1;
     private GameObject move;
 
     private void Update()

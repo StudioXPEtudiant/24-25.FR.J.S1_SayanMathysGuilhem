@@ -21,11 +21,16 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Inputs Customisation")]
     [SerializeField] private string horizontalMoveInput = "Horizontal";
-    [SerializeField] private string verticalMoveInput = "Vertical";
+    //[SerializeField] private string verticalMoveInput = "Vertical";
     [SerializeField] private string MouseXInput = "Mouse X";
     [SerializeField] private string MouseYInput = "Mouse Y";
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
+
+    //[SerializeField] private KeyCode openshop = KeyCode.E;
+    //[SerializeField] GameObject Shop;
+    //private bool touchactive;
+
 
     private Camera mainCamera; 
     private float verticalRotation;
@@ -37,14 +42,30 @@ public class FirstPersonController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         mainCamera = Camera.main;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     private void Update()
     {
         HandleMovement();
         HandleRotation();
+        //if (Input.GetKeyDown(openshop))
+        //{
+        //    if (touchactive == false)
+        //    {
+        //        touchactive = true;
+        //        Cursor.lockState = CursorLockMode.Locked;
+        //        Cursor.visible = true;
+        //    }
+        //    else
+        //    {
+        //        touchactive = true;
+        //        Cursor.lockState = CursorLockMode.None;
+        //        Cursor.visible = false;
+        //    }
+        //}
+
     }
 
     void HandleMovement()

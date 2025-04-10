@@ -6,6 +6,12 @@ TagManager:
   tags:
   - wall
   - ennemy
+  - Bullet
+  - balle
+  - tree
+  - wood
+  - Ground
+  - EnderPearl
   layers:
   - Default
   - TransparentFX

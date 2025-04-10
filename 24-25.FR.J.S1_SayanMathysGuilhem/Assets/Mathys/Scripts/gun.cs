@@ -20,7 +20,7 @@ public class gun : MonoBehaviour
     private float Cooldown = 0f;
     public float CoolDownReload = 2f;
     //private float CanShoot = 0;
-
+    
     void Update()
     {
         Cooldown -= Time.deltaTime;
